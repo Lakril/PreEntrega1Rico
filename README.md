@@ -1,6 +1,6 @@
 # Projecto React CoderHouse
 
-## Primera pre-entrega
+## Segunda pre-entrega
 
 Student: @Jackson Rico
 Group coderhouse: xxx

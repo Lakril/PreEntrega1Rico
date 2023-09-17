@@ -4,14 +4,15 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import ItemListContainer from './components/ItemListContainer'
 import NavBar from './components/NavBar'
-import Home from './components/Home'
+// import Home from './components/Home'
 import About from './components/About'
 import Cart from './components/Cart'
-import ItemDetail from './components/ItemDetail'
+// import ItemDetail from './components/ItemDetail'
+import ItemDetailContainer from './components/ItemDetailContainer'
 
 function App() {
 
-  const greeting = "Bienvenidos a mi empresa de renta de propiedades"
+  // const greeting = "Bienvenidos a mi empresa de renta de propiedades"
 
   return (
     <>
@@ -25,11 +26,12 @@ function App() {
 
    
           {/* <ItemListContainer greeting={greeting} /> */}
-          <Route exact path="/" element={<Home/>} />
+          <Route exact path="/" element={<ItemListContainer/>} />
           <Route exact path='/about' element={<About/>} />
           <Route exact path='/cart' element={<Cart/>} />
           {/* <Route exact path='/item/:id' element={<ItemDetail/>} /> */}
-          <Route exact path='/item/:id' element={<ItemListContainer/>} />
+          <Route exact path='/category/:id' element={<ItemListContainer/>} />
+          <Route exact path='/item/:id' element={<ItemDetailContainer/>} />
         </Routes>
       </BrowserRouter >
     </>

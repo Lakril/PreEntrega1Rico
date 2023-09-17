@@ -3,13 +3,18 @@ import { useState, useEffect } from 'react';
 import styles from './ItemList.module.css'
 import { Card, Stack, CardBody, CardFooter, Heading, Text, Divider, Button, ButtonGroup} from '@chakra-ui/react'
 import { useParams } from 'react-router-dom';
-// import { Container } from '@chakra-ui/react';
 
-// eslint-disable-next-line react/prop-types
+
 const ItemDetail = () => {
 
     const {id} = useParams()
-    console.log(id)
+    useEffect(()=> {
+        console.log("Recived userId to:", id)
+        return () => {
+            console.log("Will change user", id)
+        }
+    },[id])
+    // console.log(id)
 
     const [products, setProduct] = useState([])
 

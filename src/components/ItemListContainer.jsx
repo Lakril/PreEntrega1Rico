@@ -10,7 +10,7 @@ const ItemListContainer = ({ greeting, products}) => {
 
   // Item lis comtainer
   const {category} = useParams()
-  // const filterCategory = products.filter((products)=>products.category == cat)
+  // const filterCategory = products.filter((products)=>products.category == category)
   console.log(category)
 
   return (

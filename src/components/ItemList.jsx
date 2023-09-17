@@ -1,6 +1,7 @@
 import Item from './Item'
 import { useState, useEffect } from 'react';
 import styles from './ItemList.module.css'
+import { useParams } from 'react-router-dom';
 // import { Container } from '@chakra-ui/react';
 
 // eslint-disable-next-line react/prop-types
@@ -16,9 +17,10 @@ const ItemList = () => {
         return data
     }
 
+    const {id} = useParams()
     useEffect(() => {
         getProducts().then((products) => setProduct(products))
-    }, [])
+    }, [id])
 
     //getProducts()
 
