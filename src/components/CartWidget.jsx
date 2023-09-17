@@ -1,4 +1,4 @@
-import styles from "./CartWodget.module.css"
+import styles from "./CartWodget.module.css";
 
 const CartWidget = () => {
   return (
@@ -10,7 +10,7 @@ const CartWidget = () => {
         <p>5</p>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default CartWidget
+export default CartWidget;
