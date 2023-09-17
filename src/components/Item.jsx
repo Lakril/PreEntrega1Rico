@@ -1,7 +1,7 @@
 import { Card, Stack, CardBody, CardFooter, Heading, Text, Divider, Button, ButtonGroup, Image } from '@chakra-ui/react'
 
 // eslint-disable-next-line react/prop-types
-const Item = ({ title, price, category, image , description}) => {
+const Item = ({ title, price, category, image, description }) => {
     return (
         <Card maxW='sm'>
             <CardBody>
@@ -19,18 +19,18 @@ const Item = ({ title, price, category, image , description}) => {
                         {price}
                     </Text>
                     <Text color='blue.600' fontSize='2xl'>
-                       {category}
+                        {category}
                     </Text>
                 </Stack>
             </CardBody>
-            <Divider />
             <CardFooter>
                 <ButtonGroup spacing='2'>
                     <Button variant='solid' colorScheme='blue'>
-                        Buy now
+                        Detalle
                     </Button>
                 </ButtonGroup>
             </CardFooter>
+            <Divider />
         </Card>
     )
 }

@@ -28,7 +28,7 @@ const ItemList = () => {
             {
                 products.map((p) => {
                     return (
-                        <Item xs={1} md={2}
+                        <Item 
                             key={p.id}
                             title={p.title}
                             price={p.price}
