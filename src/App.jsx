@@ -20,9 +20,6 @@ function App() {
         <Routes>
 
 
-          {/* <Route exact path='/items'/> */}
-
-
           {/* <ItemListContainer greeting={greeting} /> */}
           <Route exact path="/" element={<Home />} />
           <Route exact path='/about' element={<About />} />

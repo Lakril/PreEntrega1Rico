@@ -1,7 +1,6 @@
 import Item from './Item'
 import styles from './ItemList.module.css'
 
-// import { Container } from '@chakra-ui/react';
 
 // eslint-disable-next-line react/prop-types, no-unused-vars
 const ItemList = ({products}) => {
