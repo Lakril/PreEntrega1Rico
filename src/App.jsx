@@ -24,14 +24,14 @@ function App() {
 
           {/* <Route exact path='/items'/> */}
 
-   
+
           {/* <ItemListContainer greeting={greeting} /> */}
-          <Route exact path="/" element={<ItemListContainer/>} />
-          <Route exact path='/about' element={<About/>} />
-          <Route exact path='/cart' element={<Cart/>} />
+          <Route exact path="/" element={<ItemListContainer />} />
+          <Route exact path='/about' element={<About />} />
+          <Route exact path='/cart' element={<Cart />} />
           {/* <Route exact path='/item/:id' element={<ItemDetail/>} /> */}
-          <Route exact path='/category/:id' element={<ItemListContainer/>} />
-          <Route exact path='/item/:id' element={<ItemDetailContainer/>} />
+          <Route exact path='/item/:id' element={<ItemDetailContainer />} />
+          <Route exact path='/category/:category' element={<ItemListContainer />} />
         </Routes>
       </BrowserRouter >
     </>

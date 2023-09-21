@@ -9,9 +9,9 @@ const NavBar = () => {
             <Flex className={styles.container}>
                 <Box p='10' textAlign={'center'} >
                     <Link to={"/"}>
-                    <div className={styles.logo}>
-                        <img src="src/img/vacation_rental.svg" alt="" />
-                    </div>
+                        <div className={styles.logo}>
+                            <img src="src/img/vacation_rental.svg" alt="" />
+                        </div>
                     </Link>
                 </Box>
                 <Spacer />
@@ -28,15 +28,29 @@ const NavBar = () => {
                             _expanded={{ bg: 'blue.400' }}
                             _focus={{ boxShadow: 'outline' }}
                         >
-                            Category
+                            Categories
                         </MenuButton>
                         <MenuList>
-                            <Link to={`/categoria/${"1"}`}>
-                            <MenuItem>Categoria A</MenuItem>
-                            </Link>
-                            <MenuItem>Long-term rental</MenuItem>
-                            <MenuItem>Resort rentals</MenuItem>
-                            <MenuItem>Beachfront rentals</MenuItem>
+                            <MenuItem>
+                                <Link to={`/category/${"men's clothing"}`}>
+                                    Men&apos;s clothing
+                                </Link>
+                            </MenuItem>
+                            <MenuItem>
+                                <Link to={`/category/${'jewelery'}`}>
+                                    Jewelery
+                                </Link>
+                            </MenuItem>
+                            <MenuItem>
+                                <Link to={`/category/${'electronics'}`}>
+                                    Electronics
+                                </Link>
+                            </MenuItem>
+                            <MenuItem>
+                                <Link to={`/category/${"women's clothing"}`}>
+                                    Women&apos;s clothing
+                                </Link>
+                            </MenuItem>
                         </MenuList>
                     </Menu >
                 </Box>
@@ -48,7 +62,7 @@ const NavBar = () => {
                 // border={"solid"}
                 >
                     <Link to={"/cart"}>
-                    <CartWidget />
+                        <CartWidget />
                     </Link>
                 </Box>
             </Flex>
