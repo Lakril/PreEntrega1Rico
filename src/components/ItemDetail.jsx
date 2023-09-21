@@ -1,63 +1,51 @@
 
-import { useState, useEffect } from 'react';
 import styles from './ItemList.module.css'
-import { Card, Stack, CardBody, CardFooter, Heading, Text, Divider, Button, ButtonGroup} from '@chakra-ui/react'
+import { Card, Stack, CardBody, CardFooter, Heading, Text, Divider, Button, ButtonGroup } from '@chakra-ui/react'
 import { useParams } from 'react-router-dom';
+import ItemCount from './ItemCount';
 
 
-const ItemDetail = () => {
 
-    const {id} = useParams()
-    useEffect(()=> {
-        console.log("Recived userId to:", id)
-        return () => {
-            console.log("Will change user", id)
-        }
-    },[id])
-    // console.log(id)
+// eslint-disable-next-line react/prop-types
+const ItemDetail = ({ products }) => {
 
-    const [products, setProduct] = useState([])
+    
 
-    const getProducts = async () => {
-        const response = await fetch("https://fakestoreapi.com/products/")
-        // console.log(response)
-        const data = await response.json()
+    const { id } = useParams();
 
-        return data
-    }
+    
 
-    useEffect(() => {
-        getProducts().then((products) => setProduct(products))
-    }, [])
+    // console.log(products)
 
-    //getProducts()
+
+
+    const filterId = products.filter((products) => products.id == id)
 
 
     return (
         <div className={styles.container}>
-            {
-                products.map((p) => {
-                    return (
-                        <Card maxW='sm' key={p.id}>
-                            <CardBody>
-                                <Stack mt='6' spacing='3'>
-                                    <Heading size='md' title={p.title} ></Heading>
-                                    <Text fontSize='small' description={p.description}>
-                                        description
-                                    </Text>
-                                </Stack>
-                            </CardBody>
-                            <CardFooter>
-                                <ButtonGroup spacing='2'>
-                                    <Button variant='solid' colorScheme='blue'>
-                                        Agregar al carrito
-                                    </Button>
-                                </ButtonGroup>
-                            </CardFooter>
-                            <Divider />
-                        </Card>
-                    )
-                })
+            {filterId.map((p) => {
+                return (
+                    <Card maxW='sm' key={p.id}>
+                        <CardBody>
+                            <Stack mt='6' spacing='3'>
+                                <Heading size='md' >{p.title}</Heading>
+                                <Text fontSize='small'>
+                                    {p.description}
+                                </Text>
+                            </Stack>
+                        </CardBody>
+                        <CardFooter>
+                            <ButtonGroup spacing='2'>
+                                <Button variant='solid' colorScheme='blue'>
+                                    <ItemCount />
+                                </Button>
+                            </ButtonGroup>
+                        </CardFooter>
+                        <Divider />
+                    </Card>
+                )
+            })
             }
         </div>
     )
