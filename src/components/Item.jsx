@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 // eslint-disable-next-line react/prop-types
 const Item = ({ title, price, category, image, description, id }) => {
+
     return (
         <Card maxW='sm'>
             <CardBody>
@@ -27,11 +28,11 @@ const Item = ({ title, price, category, image, description, id }) => {
             </CardBody>
             <CardFooter>
                 <ButtonGroup spacing='2'>
-                    <Link to={`/item/${id}`}>
-                        <Button variant='solid' colorScheme='blue'>
-                            Details 12
-                        </Button>
-                    </Link>
+                    <Button variant='solid' colorScheme='blue'>
+                        <Link to={`/item/${id}`}>
+                            Details
+                        </Link>
+                    </Button>
                 </ButtonGroup>
             </CardFooter>
             <Divider />
