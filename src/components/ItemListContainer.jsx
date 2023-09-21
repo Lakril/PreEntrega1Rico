@@ -1,7 +1,7 @@
 import styles from './ItemListContainer.module.css'
 import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
-import data from '../data/fakestoreapi_com.json'
+import {data} from '../data/fakestoreapi_com.js'
 
 
 // eslint-disable-next-line react/prop-types
@@ -30,7 +30,7 @@ const ItemListContainer = () => {
     console.log(error);
   })
 
-  const filterCategory = products.filter((products)=>products.category == category)
+  const filterCategory = products.filter((product)=>product.category == category)
   //console.log(category)
 
   return (

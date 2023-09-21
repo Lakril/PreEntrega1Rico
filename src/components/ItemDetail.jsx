@@ -1,30 +1,32 @@
 
 import styles from './ItemList.module.css'
 import { Card, Stack, CardBody, CardFooter, Heading, Text, Divider, Button, ButtonGroup } from '@chakra-ui/react'
-import { useParams } from 'react-router-dom';
-import ItemCount from './ItemCount';
+// import ItemCount from './ItemCount';
+import { useParams, Link } from 'react-router-dom';
 
 
 
 // eslint-disable-next-line react/prop-types
 const ItemDetail = ({ products }) => {
 
-    
 
-    const { id } = useParams();
+    const { id } = useParams()
+    // const { id } = useParams();
 
-    
+    //const products = data
 
-    // console.log(products)
+    console.log(id)
 
 
 
-    const filterId = products.filter((products) => products.id == id)
-
+    const filterProducts = products.filter((product) => product.id === Number(id))
+    console.log(filterProducts)
+    console.log(products)
 
     return (
         <div className={styles.container}>
-            {filterId.map((p) => {
+            {/* eslint-disable-next-line react/prop-types */}
+            {filterProducts.map((p) => {
                 return (
                     <Card maxW='sm' key={p.id}>
                         <CardBody>
@@ -37,9 +39,11 @@ const ItemDetail = ({ products }) => {
                         </CardBody>
                         <CardFooter>
                             <ButtonGroup spacing='2'>
-                                <Button variant='solid' colorScheme='blue'>
-                                    <ItemCount />
-                                </Button>
+                                <Link to={`/item/${p.id}`}>
+                                    <Button variant='solid' colorScheme='blue'>
+                                        test id
+                                    </Button>
+                                </Link>
                             </ButtonGroup>
                         </CardFooter>
                         <Divider />
