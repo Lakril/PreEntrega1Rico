@@ -1,8 +1,10 @@
 
-import products from '../data/fakestoreapi_com.json'
+import {data} from '../data/fakestoreapi_com.js'
 import ItemList from './ItemList';
 
 const Home = () => {
+
+  const products = data
 
 
   const getProducts = new Promise((resolve, reject) => {
