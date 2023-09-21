@@ -1,45 +1,29 @@
 import Item from './Item'
-import { useState, useEffect } from 'react';
 import styles from './ItemList.module.css'
-import { useParams } from 'react-router-dom';
+
 // import { Container } from '@chakra-ui/react';
 
-// eslint-disable-next-line react/prop-types
-const ItemList = () => {
+// eslint-disable-next-line react/prop-types, no-unused-vars
+const ItemList = ({products}) => {
 
-    const [products, setProduct] = useState([])
-
-    const getProducts = async () => {
-        const response = await fetch("https://fakestoreapi.com/products/")
-        // console.log(response)
-        const data = await response.json()
-
-        return data
-    }
-
-    const {id} = useParams()
-    useEffect(() => {
-        getProducts().then((products) => setProduct(products))
-    }, [id])
-
-    //getProducts()
+    
 
 
     return (
         <div className={styles.container}>
-            {
-                products.map((p) => {
-                    return (
-                        <Item 
-                            key={p.id}
-                            title={p.title}
-                            price={p.price}
-                            category={p.category}
-                            image={p.image}
-                            description={p.description}
-                        />
-                    )
-                })
+            {/* eslint-disable-next-line no-undef, react/prop-types */}
+            {products.map((p) => {
+                return (
+                    <Item
+                        key={p.id}
+                        title={p.title}
+                        price={p.price}
+                        category={p.category}
+                        image={p.image}
+                        description={p.description}
+                    />
+                )
+            })
             }
         </div>
     )
