@@ -1,7 +1,7 @@
 import styles from './ItemListContainer.module.css'
 import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
-import {data} from '../data/fakestoreapi_com.js'
+import { data } from '../data/fakestoreapi_com.js'
 
 
 // eslint-disable-next-line react/prop-types
@@ -12,9 +12,9 @@ const ItemListContainer = () => {
 
   const products = data
 
-  const getProducts = new Promise((resolve, reject)=>{
+  const getProducts = new Promise((resolve, reject) => {
     if (products.length > 0) {
-      setTimeout(()=>{
+      setTimeout(() => {
         resolve(products)
       }, 2000)
     } else {
@@ -23,14 +23,14 @@ const ItemListContainer = () => {
   })
 
   getProducts
-  .then((res)=>{
-    console.log(res);
-  })
-  .catch((error)=>{
-    console.log(error);
-  })
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((error) => {
+      console.log(error);
+    })
 
-  const filterCategory = products.filter((product)=>product.category == category)
+  const filterCategory = products.filter((product) => product.category == category)
   //console.log(category)
 
   return (

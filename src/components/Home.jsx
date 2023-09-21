@@ -1,5 +1,5 @@
 
-import {data} from '../data/fakestoreapi_com.js'
+import { data } from '../data/fakestoreapi_com.js'
 import ItemList from './ItemList';
 
 const Home = () => {

@@ -1,6 +1,6 @@
 import styles from './ItemListContainer.module.css'
 import ItemDetail from './ItemDetail';
-import {data} from '../data/fakestoreapi_com.js'
+import { data } from '../data/fakestoreapi_com.js'
 
 
 
@@ -8,13 +8,13 @@ import {data} from '../data/fakestoreapi_com.js'
 const ItemDetailContainer = () => {
 
 
-    // Item lis comtainer
+  // Item lis comtainer
   const products = data
 
 
-  const getProducts = new Promise((resolve, reject)=>{
+  const getProducts = new Promise((resolve, reject) => {
     if (products.length > 0) {
-      setTimeout(()=>{
+      setTimeout(() => {
         resolve(products)
       }, 2000)
     } else {
@@ -23,24 +23,19 @@ const ItemDetailContainer = () => {
   })
 
   getProducts
-  .then((res)=>{
-    console.log(res);
-  })
-  .catch((error)=>{
-    console.log(error);
-  })
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((error) => {
+      console.log(error);
+    })
 
-  
-
-
-
-  //console.log(category)
 
   return (
     <>
       <div className={styles.container} >
         <div className={styles.item} >
-          <ItemDetail products={products}/>
+          <ItemDetail products={products} />
         </div>
       </div>
     </>

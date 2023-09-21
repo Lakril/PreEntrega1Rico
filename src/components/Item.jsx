@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 
 // eslint-disable-next-line react/prop-types
-const Item = ({ title, price, category, image, description, id }) => {
+const Item = ({ title, price, category, image, id }) => {
     return (
         <Card maxW='sm'>
             <CardBody>
@@ -14,9 +14,6 @@ const Item = ({ title, price, category, image, description, id }) => {
                 />
                 <Stack mt='6' spacing='3'>
                     <Heading size='md'>{title}</Heading>
-                    <Text fontSize='small'>
-                        {description}
-                    </Text>
                     <Text color='blue.600' fontSize='2xl'>
                         $ {price}
                     </Text>
@@ -29,7 +26,7 @@ const Item = ({ title, price, category, image, description, id }) => {
                 <ButtonGroup spacing='2'>
                     <Link to={`/item/${id}`}>
                         <Button variant='solid' colorScheme='blue'>
-                            Details 12
+                            Details
                         </Button>
                     </Link>
                 </ButtonGroup>
