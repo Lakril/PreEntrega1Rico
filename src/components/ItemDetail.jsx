@@ -12,8 +12,9 @@ const ItemDetail = ({ products }) => {
 
 
     const { id } = useParams()
-    // console.log(id)
+    // const { id } = useParams();
 
+    //const products = data
 
 
     // eslint-disable-next-line react/prop-types

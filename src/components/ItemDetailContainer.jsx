@@ -4,7 +4,6 @@ import { data } from '../data/fakestoreapi_com.js'
 
 
 
-
 // eslint-disable-next-line react/prop-types
 const ItemDetailContainer = () => {
 

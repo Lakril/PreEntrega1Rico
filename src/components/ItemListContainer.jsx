@@ -1,7 +1,7 @@
 import styles from './ItemListContainer.module.css'
 import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
-import {data} from '../data/fakestoreapi_com.js'
+import { data } from '../data/fakestoreapi_com.js'
 
 
 
