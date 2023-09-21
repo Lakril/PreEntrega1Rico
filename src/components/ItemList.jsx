@@ -1,11 +1,21 @@
 import React from 'react'
 import Item from './Item'
 import styles from './ItemList.module.css'
+<<<<<<< HEAD
 
 
 // eslint-disable-next-line react/prop-types, no-unused-vars, react-refresh/only-export-components
 const ItemList = ({products}) => {
 
+=======
+
+// import { Container } from '@chakra-ui/react';
+
+// eslint-disable-next-line react/prop-types, no-unused-vars
+const ItemList = ({products}) => {
+
+    
+>>>>>>> 2e6de0e (feat: corrections categories)
 
 
     return (
@@ -15,7 +25,10 @@ const ItemList = ({products}) => {
                 return (
                     <Item
                         key={p.id}
+<<<<<<< HEAD
                         id={p.id}
+=======
+>>>>>>> 2e6de0e (feat: corrections categories)
                         title={p.title}
                         price={p.price}
                         category={p.category}
