@@ -28,11 +28,11 @@ const Item = ({ title, price, category, image, description, id }) => {
             </CardBody>
             <CardFooter>
                 <ButtonGroup spacing='2'>
-                    <Button variant='solid' colorScheme='blue'>
-                        <Link to={`/item/${id}`}>
-                            Details
-                        </Link>
-                    </Button>
+                    <Link to={`/item/${id}`}>
+                        <Button variant='solid' colorScheme='blue'>
+                            Details 12
+                        </Button>
+                    </Link>
                 </ButtonGroup>
             </CardFooter>
             <Divider />
