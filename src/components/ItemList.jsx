@@ -5,7 +5,6 @@ import styles from './ItemList.module.css'
 // eslint-disable-next-line react/prop-types, no-unused-vars
 const ItemList = ({products}) => {
 
-    
 
 
     return (

@@ -1,6 +1,7 @@
 
 import styles from './ItemList.module.css'
 import { Card, Stack, CardBody, CardFooter, Heading, Text, Divider, Button, ButtonGroup } from '@chakra-ui/react'
+// import ItemCount from './ItemCount';
 import ItemCount from './ItemCount';
 import { useParams } from 'react-router-dom';
 
@@ -42,6 +43,7 @@ const ItemDetail = ({ products }) => {
                                 </Button>
                                 {/* <Link to={`/item/${p.id}`}>
                                     <Button variant='solid' colorScheme='blue'>
+                                        test id
                                         test id
                                     </Button>
                                 </Link> */}
