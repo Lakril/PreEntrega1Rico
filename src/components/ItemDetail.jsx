@@ -1,6 +1,6 @@
 
 import styles from './ItemList.module.css'
-import { Card, Stack, CardBody, CardFooter, Heading, Text, Divider, Button, ButtonGroup } from '@chakra-ui/react'
+import { Card, Stack, CardBody, CardFooter, Heading, Text, Divider, ButtonGroup } from '@chakra-ui/react'
 // import ItemCount from './ItemCount';
 import ItemCount from './ItemCount';
 import { useParams } from 'react-router-dom';
