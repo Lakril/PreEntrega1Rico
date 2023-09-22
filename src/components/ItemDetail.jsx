@@ -38,7 +38,6 @@ const ItemDetail = ({ products }) => {
                         <CardFooter>
                             <ButtonGroup spacing='2'>
                                 <Button variant='solid' colorScheme='blue' px={30} py={10} textAlign={'center'}>
-                                    Count
                                     <ItemCount />
                                 </Button>
                                 {/* <Link to={`/item/${p.id}`}>
