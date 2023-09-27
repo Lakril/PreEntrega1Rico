@@ -11,7 +11,7 @@ const ItemDetailContainer = () => {
   // Item lis comtainer
   const products = data
 
-
+  // Promise---------------------
   const getProducts = new Promise((resolve, reject) => {
     if (products.length > 0) {
       setTimeout(() => {
@@ -29,13 +29,13 @@ const ItemDetailContainer = () => {
     .catch((error) => {
       console.log(error);
     })
-
+  // Promise-------------------------
 
   return (
     <>
       <div className={styles.container} >
         <div className={styles.item} >
-          <ItemDetail products={products}/>
+          <ItemDetail products={products} />
         </div>
       </div>
     </>
