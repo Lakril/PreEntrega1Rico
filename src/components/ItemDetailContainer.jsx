@@ -35,7 +35,7 @@ const ItemDetailContainer = () => {
     <>
       <div className={styles.container} >
         <div className={styles.item} >
-          <ItemDetail products={products}/>
+          <ItemDetail products={products} />
         </div>
       </div>
     </>
