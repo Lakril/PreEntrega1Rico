@@ -7,6 +7,7 @@ import Home from './components/Home'
 import About from './components/About'
 import Cart from './components/Cart'
 import Form from './components/Form'
+import ShoppingCartContext from './context/ShoppingCartContext'
 // import ItemDetail from './components/ItemDetail'
 
 function App() {
@@ -17,18 +18,21 @@ function App() {
     <>
 
       <BrowserRouter>
-        <NavBar />
-        <Routes>
+        <ShoppingCartContext>
+          {/* <CartWidget /> */}
+          <NavBar />
+          <Routes>
 
 
-          {/* <ItemListContainer greeting={greeting} /> */}
-          <Route exact path="/" element={<Home />} />
-          <Route exact path='/about' element={<About />} />
-          <Route exact path='/form' element={<Form />} />
-          <Route exact path='/cart' element={<Cart />} />
-          <Route exact path='/category/:category' element={<ItemListContainer />} />
-          <Route exact path='/item/:id' element={<ItemDetailContainer />} />
-        </Routes>
+            {/* <ItemListContainer greeting={greeting} /> */}
+            <Route exact path="/" element={<Home />} />
+            <Route exact path='/about' element={<About />} />
+            <Route exact path='/form' element={<Form />} />
+            <Route exact path='/cart' element={<Cart />} />
+            <Route exact path='/category/:category' element={<ItemListContainer />} />
+            <Route exact path='/item/:id' element={<ItemDetailContainer />} />
+          </Routes>
+        </ShoppingCartContext>
       </BrowserRouter >
     </>
   )
