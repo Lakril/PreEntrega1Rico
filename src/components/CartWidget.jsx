@@ -5,6 +5,7 @@ import { CartContext } from "../context/ShoppingCartContext";
 
 const CartWidget = () => {
 
+  // eslint-disable-next-line no-unused-vars
   const { comision, cart, setCart } = useContext(CartContext)
 
   // console.log(comision)

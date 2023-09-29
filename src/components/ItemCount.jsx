@@ -30,7 +30,11 @@ const ItemCount = () => {
           <ButtonGroup size="md" isTruncated variant="outline" >
             <IconButton onClick={() => setCount(count + 1)} icon={<AddIcon />} colorScheme='blue' variant='solid' />
             <Button colorScheme='blue' variant='solid'>{count}</Button>
-            <IconButton onClick={() => setCount(count - 1)} icon={<MinusIcon />} colorScheme='blue' variant='solid' />
+            <IconButton onClick={() => {
+              if (count >= 1) {
+                setCount(count - 1);
+              }
+            }} icon={<MinusIcon />} colorScheme='blue' variant='solid' />
           </ButtonGroup>
           <Button onClick={onAdd}>Agregar al carrito</Button>
         </>
