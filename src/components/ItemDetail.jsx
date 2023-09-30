@@ -1,9 +1,9 @@
-
 import styles from './ItemList.module.css'
 import { Card, Stack, CardBody, CardFooter, Heading, Text, Divider, ButtonGroup } from '@chakra-ui/react'
 // import ItemCount from './ItemCount';
-import ItemCount from './ItemCount';
+import ItemCount from './ItemCount.jsx';
 import { useParams } from 'react-router-dom';
+import React from 'react'
 
 
 
@@ -12,9 +12,8 @@ const ItemDetail = ({ products }) => {
 
 
     const { id } = useParams()
-    // const { id } = useParams();
+    // console.log(id)
 
-    //const products = data
 
 
     // eslint-disable-next-line react/prop-types
@@ -38,16 +37,7 @@ const ItemDetail = ({ products }) => {
                         </CardBody>
                         <CardFooter>
                             <ButtonGroup spacing='2'>
-                                <Button variant='solid' colorScheme='blue' px={30} py={10} textAlign={'center'}>
-                                    Count
-                                    <ItemCount />
-                                </Button>
-                                {/* <Link to={`/item/${p.id}`}>
-                                    <Button variant='solid' colorScheme='blue'>
-                                        test id
-                                        test id
-                                    </Button>
-                                </Link> */}
+                                <ItemCount />
                             </ButtonGroup>
                         </CardFooter>
                         <Divider />
