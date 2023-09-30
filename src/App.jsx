@@ -44,21 +44,3 @@ function App() {
 }
 
 export default App
-
-/*
-Eventos
-
-En HTML
-<button onclick="enviarInformacion()..."
-
-En JSX
-<button onClick={enviarInformacion}..."
-
-<form onsubmit="agregarInformacion()"..
-
-<form onSubmit={agregarInformacion}..
-
-
-
-
-*/
