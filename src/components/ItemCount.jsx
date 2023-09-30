@@ -7,7 +7,7 @@ import { AddIcon, MinusIcon } from '@chakra-ui/icons'
 // Hook
 const ItemCount = () => {
 
-
+  // const {cart, setCart} = useContext(CartContext)
   const [count, setCount] = useState(0)
   const [ocultar, setOcultar] = useState(false)
 

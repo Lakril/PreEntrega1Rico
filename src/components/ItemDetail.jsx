@@ -4,10 +4,11 @@ import { Card, Stack, CardBody, CardFooter, Heading, Text, Divider, ButtonGroup 
 // import ItemCount from './ItemCount';
 import ItemCount from './ItemCount.jsx';
 import { useParams } from 'react-router-dom';
+import React from 'react'
 
 
 
-// eslint-disable-next-line react/prop-types
+// eslint-disable-next-line react/prop-types, react-refresh/only-export-components
 const ItemDetail = ({ products }) => {
 
 
@@ -49,4 +50,5 @@ const ItemDetail = ({ products }) => {
     )
 }
 
-export default ItemDetail
+// eslint-disable-next-line react-refresh/only-export-components
+export default React.memo(ItemDetail)
