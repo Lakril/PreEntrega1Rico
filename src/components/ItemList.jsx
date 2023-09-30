@@ -1,8 +1,9 @@
+import React from 'react'
 import Item from './Item'
 import styles from './ItemList.module.css'
 
 
-// eslint-disable-next-line react/prop-types, no-unused-vars
+// eslint-disable-next-line react/prop-types, no-unused-vars, react-refresh/only-export-components
 const ItemList = ({products}) => {
 
 
@@ -14,7 +15,6 @@ const ItemList = ({products}) => {
                 return (
                     <Item
                         key={p.id}
-                        id={p.id}
                         title={p.title}
                         price={p.price}
                         category={p.category}
@@ -28,4 +28,5 @@ const ItemList = ({products}) => {
     )
 }
 
-export default ItemList
+// eslint-disable-next-line react-refresh/only-export-components
+export default React.memo(ItemList)

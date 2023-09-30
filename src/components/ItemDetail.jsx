@@ -1,19 +1,20 @@
 
 import styles from './ItemList.module.css'
-import { Card, Stack, CardBody, CardFooter, Heading, Text, Divider, Button, ButtonGroup } from '@chakra-ui/react'
+import { Card, Stack, CardBody, CardFooter, Heading, Text, Divider, ButtonGroup } from '@chakra-ui/react'
 // import ItemCount from './ItemCount';
 import ItemCount from './ItemCount';
 import { useParams } from 'react-router-dom';
 
 
 
-// eslint-disable-next-line react/prop-types
+// eslint-disable-next-line react/prop-types, react-refresh/only-export-components
 const ItemDetail = ({ products }) => {
 
 
     const { id } = useParams()
-    // console.log(id)
+    // const { id } = useParams();
 
+    //const products = data
 
 
     // eslint-disable-next-line react/prop-types
@@ -58,4 +59,5 @@ const ItemDetail = ({ products }) => {
     )
 }
 
-export default ItemDetail
+// eslint-disable-next-line react-refresh/only-export-components
+export default React.memo(ItemDetail)
