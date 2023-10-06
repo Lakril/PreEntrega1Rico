@@ -12,7 +12,7 @@ const CartWidget = () => {
   return (
     <div className={styles.container}>
       <div className={styles.item}>
-        <img src={logo} alt='' />
+        <img src={logo} alt="" />
       </div>
       <div className={styles.item}>
         <p>{comision}</p>

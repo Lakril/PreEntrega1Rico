@@ -23,14 +23,9 @@ const ItemCount = () => {
     <>
       {!ocultar && (
         <>
-          <ButtonGroup size='md' isTruncated variant='outline'>
-            <IconButton
-              onClick={() => setCount(count + 1)}
-              icon={<AddIcon />}
-              colorScheme='blue'
-              variant='solid'
-            />
-            <Button colorScheme='blue' variant='solid' size='md'>
+          <ButtonGroup size="md" isTruncated variant="outline">
+            <IconButton onClick={() => setCount(count + 1)} icon={<AddIcon />} colorScheme="blue" variant="solid" />
+            <Button colorScheme="blue" variant="solid" size="md">
               {count}
             </Button>
             <IconButton
@@ -40,11 +35,11 @@ const ItemCount = () => {
                 }
               }}
               icon={<MinusIcon />}
-              colorScheme='blue'
-              variant='solid'
+              colorScheme="blue"
+              variant="solid"
             />
           </ButtonGroup>
-          <Button colorScheme='blue' variant='solid' size='md' onClick={onAdd}>
+          <Button colorScheme="blue" variant="solid" size="md" onClick={onAdd}>
             Agregar al carrito
           </Button>
         </>

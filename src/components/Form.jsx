@@ -17,24 +17,18 @@ const Form = () => {
     // email === "" ? alert("Exist fields empty") : alert(email)
     name === '' || email === ''
       ? alert('Exist fields empty')
-      : alert(
-          `registrado con el nombre ${name} con correo electronico ${email}`
-        ); // conditional if hasta : despues de : va el else
+      : alert(`registrado con el nombre ${name} con correo electronico ${email}`); // conditional if hasta : despues de : va el else
   };
 
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <input type='text' onChange={(e) => setName(e.target.value)} />
-        <input type='email' onChange={(e) => setEmail(e.target.value)} />
-        <button type='submit'>Enviar</button>
+        <input type="text" onChange={(e) => setName(e.target.value)} />
+        <input type="email" onChange={(e) => setEmail(e.target.value)} />
+        <button type="submit">Enviar</button>
       </form>
       {/* Renderizado conditional */}
-      {pruchaseId === '' ? (
-        <p>No has enviado informacion</p>
-      ) : (
-        <p>Tu compra se realizo con el ID: {pruchaseId}</p>
-      )}
+      {pruchaseId === '' ? <p>No has enviado informacion</p> : <p>Tu compra se realizo con el ID: {pruchaseId}</p>}
     </>
   );
 };

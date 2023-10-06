@@ -6,9 +6,7 @@ export const TaskContext = createContext(null);
 export const ContextProvide = ({ children }) => {
   const value = [];
 
-  return (
-    <TaskContext.Provider value={{ value }}>{children}</TaskContext.Provider>
-  );
+  return <TaskContext.Provider value={{ value }}>{children}</TaskContext.Provider>;
 };
 
 export default ContextProvide;
