@@ -28,9 +28,7 @@ const ItemListContainer = () => {
       console.log(error);
     });
 
-  const filterCategory = products.filter(
-    (product) => product.category == category
-  );
+  const filterCategory = products.filter((product) => product.category == category);
   //console.log(category)
 
   return (
