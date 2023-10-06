@@ -1,21 +1,17 @@
-import { createContext, useState } from 'react'
+import { createContext, useState } from 'react';
 
-
-export const CartContext = createContext(null)
+export const CartContext = createContext(null);
 
 // eslint-disable-next-line react/prop-types
 export const ShoppingCartProvider = ({ children }) => {
-    const comision = 47190
-    const [cart, setCart] = useState([])
-    
+  const comision = 47190;
+  const [cart, setCart] = useState([]);
 
+  return (
+    <CartContext.Provider value={{ comision, cart, setCart }}>
+      {children}
+    </CartContext.Provider>
+  );
+};
 
-    return (
-        <CartContext.Provider value={{ comision, cart, setCart }}>
-            {children}
-        </CartContext.Provider>
-    )
-}
-
-
-export default ShoppingCartProvider
+export default ShoppingCartProvider;
