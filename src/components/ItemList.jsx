@@ -1,12 +1,11 @@
 import React from 'react';
 import Item from './Item';
 import styles from './ItemList.module.css';
+import PropTypes from 'prop-types';
 
-// eslint-disable-next-line react/prop-types, no-unused-vars, react-refresh/only-export-components
 const ItemList = ({ products }) => {
   return (
     <div className={styles.container}>
-      {/* eslint-disable-next-line no-undef, react/prop-types */}
       {products.map((p) => {
         return (
           <Item
@@ -24,5 +23,19 @@ const ItemList = ({ products }) => {
   );
 };
 
-// eslint-disable-next-line react-refresh/only-export-components
-export default React.memo(ItemList);
+ItemList.propTypes = {
+  products: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+      category: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};
+
+const MemoizedItemList = React.memo(ItemList);
+
+export default MemoizedItemList;

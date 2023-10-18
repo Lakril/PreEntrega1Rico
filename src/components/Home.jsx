@@ -1,26 +1,14 @@
-import { data } from '../data/fakestoreapi_com.js';
 import ItemList from './ItemList';
+import { useContext, useEffect } from 'react';
+import CartContext from '../context/Products/CartContext';
 
 const Home = () => {
-  const products = data;
+  const { products, getProducts } = useContext(CartContext);
 
-  const getProducts = new Promise((resolve, reject) => {
-    if (products.length > 0) {
-      setTimeout(() => {
-        resolve(products);
-      }, 2000);
-    } else {
-      reject(new Error('There are not data'));
-    }
-  });
-
-  getProducts
-    .then((res) => {
-      console.log(res);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+  useEffect(() => {
+    getProducts();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div>

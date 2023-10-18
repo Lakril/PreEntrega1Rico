@@ -1,31 +1,17 @@
 import styles from './ItemListContainer.module.css';
 import ItemDetail from './ItemDetail';
-import { data } from '../data/fakestoreapi_com.js';
+import { useContext, useEffect } from 'react';
+import CartContext from '../context/Products/CartContext';
 
 // eslint-disable-next-line react/prop-types
 const ItemDetailContainer = () => {
-  // Item lis comtainer
-  const products = data;
+  const { products, getProducts } = useContext(CartContext);
 
-  // Promise---------------------
-  const getProducts = new Promise((resolve, reject) => {
-    if (products.length > 0) {
-      setTimeout(() => {
-        resolve(products);
-      }, 2000);
-    } else {
-      reject(new Error('There are not data'));
-    }
-  });
+  useEffect(() => {
+    getProducts();
 
-  getProducts
-    .then((res) => {
-      console.log(res);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-  // Promise-------------------------
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
