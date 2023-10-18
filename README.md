@@ -14,3 +14,6 @@ API: <http://fakestoreapi.com/>
 ## React router dom
 
 <https://reactrouter.com/en/main/components/link>
+
+For applycate format to project run the belown command
+`bun prettier --write .`

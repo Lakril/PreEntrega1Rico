@@ -2,31 +2,25 @@ import { ButtonGroup, IconButton } from '@chakra-ui/react';
 import { Button } from '@chakra-ui/button';
 import { useState, useEffect } from 'react';
 import { AddIcon, MinusIcon } from '@chakra-ui/icons';
-import { Link } from 'react-router-dom';
+
 // import { useContext } from 'react';
-import { useContext } from 'react';
-import CartContext from '../context/Products/CartContext';
+// import CartContext from '../context/Products/CartContext';
 // import styles from './ItemCount.module.css'
-
 // Hook
-// eslint-disable-next-line react/prop-types
-const ItemCount = ({ stock, initial, productId }) => {
-  const { addProduct } = useContext(CartContext);
+export const ItemCount = () => {
+  // const { count } = useContext(CartContext);
 
-  const [count, setCount] = useState(initial);
+  const [count, setCount] = useState(0);
   const [ocultar, setOcultar] = useState(false);
-  const [goToCart, setGoToCart] = useState(false);
 
-  const onAdd = (count) => {
+  const onAdd = () => {
     alert(`Agregrado al carrito ${count}`);
     setOcultar(true);
-    addProduct(productId, count);
   };
 
   useEffect(() => {
-    // console.log('useEffect');
-    setCount(initial);
-  }, [initial]);
+    console.log('useEffect');
+  }, [count]);
 
   return (
     <>
@@ -35,8 +29,8 @@ const ItemCount = ({ stock, initial, productId }) => {
           <ButtonGroup size="md" isTruncated variant="outline">
             <IconButton
               onClick={() => setCount(count + 1)}
+              disabled={count >= stock}
               icon={<AddIcon />}
-              disabled={count <= 1}
               colorScheme="blue"
               variant="solid"
             />
@@ -49,31 +43,16 @@ const ItemCount = ({ stock, initial, productId }) => {
                   setCount(count - 1);
                 }
               }}
-              disabled={count >= stock}
               icon={<MinusIcon />}
               colorScheme="blue"
               variant="solid"
             />
           </ButtonGroup>
-          <Button onClick={() => onAdd(count)} colorScheme="blue" variant="solid" size="md" disabled={stock <= 0}>
+          <Button onClick={onAdd} colorScheme="blue" variant="solid" size="md">
             Agregar al carrito
           </Button>
-        </>
-      )}
-      {/* muestra el boton terminar compra */}
-      {ocultar && (
-        <>
-          {!goToCart && (
-            <Link to="/cart">
-              <Button onClick={() => setGoToCart(true)} colorScheme="blue" variant="solid" size="md">
-                Terminar mi compra
-              </Button>
-            </Link>
-          )}
         </>
       )}
     </>
   );
 };
-
-export default ItemCount;

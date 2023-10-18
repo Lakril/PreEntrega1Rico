@@ -1,13 +1,16 @@
 import styles from './CartWodget.module.css';
 import logo from '../assets/216477_shopping_cart_icon.png';
+
 import { useContext } from 'react';
-import { CartContext } from '../context/ShoppingCartContext';
+import CartContext from '../context/Products/CartContext';
 
 const CartWidget = () => {
-  // eslint-disable-next-line no-unused-vars
-  const { comision, cart, setCart } = useContext(CartContext);
+  const { test } = useContext(CartContext);
+  console.log('cartWidget: ', test);
 
-  // console.log(comision)
+  // useEffect(() => {
+  //   getProducts();
+  // }, []);
 
   return (
     <div className={styles.container}>
@@ -15,7 +18,7 @@ const CartWidget = () => {
         <img src={logo} alt="" />
       </div>
       <div className={styles.item}>
-        <p>{comision}</p>
+        <p>{test}</p>
       </div>
     </div>
   );

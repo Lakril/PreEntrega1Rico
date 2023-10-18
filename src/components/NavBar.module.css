@@ -1,14 +1,14 @@
 .container {
-    font-family: sans-serif;
-    background-color: #bdd1d4;
-    color: #bdd1d4;
-    width: 100%;
-    /* max-width: 1280px; */
-    /* border: solid red; */
+  font-family: sans-serif;
+  background-color: #bdd1d4;
+  color: #bdd1d4;
+  width: 100%;
+  /* max-width: 1280px; */
+  /* border: solid red; */
 }
 
 .logo {
-    width: 8rem;
-    align-items: center;
-    margin: 0 auto;
+  width: 8rem;
+  align-items: center;
+  margin: 0 auto;
 }
