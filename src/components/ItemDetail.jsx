@@ -1,12 +1,12 @@
+/* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/prop-types */
 import styles from './ItemList.module.css';
 import { Card, Stack, CardBody, CardFooter, Heading, Text, Divider, ButtonGroup } from '@chakra-ui/react';
-// import ItemCount from './ItemCount';
 import ItemCount from './ItemCount.jsx';
 import { useParams } from 'react-router-dom';
 import React from 'react';
+import { CartContext } from '../context/ShoppingCartContext';
 
-// eslint-disable-next-line react-refresh/only-export-components
 const ItemDetail = ({ products }) => {
   const { id } = useParams();
   // console.log(id)
