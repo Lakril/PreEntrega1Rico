@@ -1,6 +1,7 @@
+import styles from './ItemList.module.css';
+
 import React from 'react';
 import Item from './Item';
-import styles from './ItemList.module.css';
 import PropTypes from 'prop-types';
 
 const ItemList = ({ products }) => {

@@ -1,16 +1,15 @@
 import styles from './ItemListContainer.module.css';
 import ItemDetail from './ItemDetail';
+
 import { useContext, useEffect } from 'react';
 import CartContext from '../context/Products/CartContext';
 
-// eslint-disable-next-line react/prop-types
 const ItemDetailContainer = () => {
   const { products, getProducts } = useContext(CartContext);
 
   useEffect(() => {
     getProducts();
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

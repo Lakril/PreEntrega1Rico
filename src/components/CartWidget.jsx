@@ -5,12 +5,7 @@ import { useContext } from 'react';
 import CartContext from '../context/Products/CartContext';
 
 const CartWidget = () => {
-  const { test } = useContext(CartContext);
-  console.log('cartWidget: ', test);
-
-  // useEffect(() => {
-  //   getProducts();
-  // }, []);
+  const { totalProducts } = useContext(CartContext);
 
   return (
     <div className={styles.container}>
@@ -18,7 +13,7 @@ const CartWidget = () => {
         <img src={logo} alt="" />
       </div>
       <div className={styles.item}>
-        <p>{test}</p>
+        <span>{totalProducts() || ''}</span>
       </div>
     </div>
   );

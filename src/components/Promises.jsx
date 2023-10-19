@@ -2,6 +2,7 @@
 import React from 'react';
 
 const Promises = () => {
+  
   const aplicarDescuento = new Promise((resolve, reject) => {
     const descuento = true;
 

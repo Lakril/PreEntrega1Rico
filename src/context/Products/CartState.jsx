@@ -13,7 +13,6 @@ const CartState = (props) => {
     products: [],
     // retunr a single value of product: selectProduct.x, selectProduct.y, selectProduct.z
     selectProduct: null,
-    test: [],
     addProductToCart: [],
   };
 
@@ -46,6 +45,8 @@ const CartState = (props) => {
       console.log(error);
     }
   };
+
+  
   //TODO: ---------------------------------- add to cart
   const addToCart = (product, count) => {
     console.log(product, count);
@@ -83,6 +84,12 @@ const CartState = (props) => {
 
   const removeItem = (id) => setCart(cart.filter((item) => item.id !== id));
 
+  const totalProducts = () => cart.reduce((acc, item) => acc + item.quantity, 0);
+
+  const totalPrice = () => {
+    return cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+  };
+
   //TODO: ---------------------------------- add to cart
 
   return (
@@ -90,7 +97,6 @@ const CartState = (props) => {
       value={{
         products: state.products,
         selectProduct: state.selectProduct,
-        test: state.test,
         addProductToCart: state.addProductToCart,
         getProducts,
         getDetails,
@@ -99,6 +105,9 @@ const CartState = (props) => {
         isInCart,
         removeItem,
         addProduct,
+        totalPrice,
+        totalProducts,
+        cart,
       }}
     >
       {props.children}

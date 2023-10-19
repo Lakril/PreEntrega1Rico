@@ -1,10 +1,9 @@
 import { ButtonGroup, IconButton } from '@chakra-ui/react';
 import { Button } from '@chakra-ui/button';
-import { useState, useEffect } from 'react';
 import { AddIcon, MinusIcon } from '@chakra-ui/icons';
+
+import { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
-// import { useContext } from 'react';
-import { useContext } from 'react';
 import CartContext from '../context/Products/CartContext';
 // import styles from './ItemCount.module.css'
 
@@ -24,7 +23,6 @@ const ItemCount = ({ stock, initial, productId }) => {
   };
 
   useEffect(() => {
-    // console.log('useEffect');
     setCount(initial);
   }, [initial]);
 

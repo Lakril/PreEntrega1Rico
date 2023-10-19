@@ -1,25 +1,23 @@
 import styles from './ItemListContainer.module.css';
 import ItemList from './ItemList';
-import { useParams } from 'react-router-dom';
 
+import { useParams } from 'react-router-dom';
 import { useContext, useEffect } from 'react';
 import CartContext from '../context/Products/CartContext';
 
-// eslint-disable-next-line react/prop-types
 const ItemListContainer = () => {
-  
   const { getProducts, products } = useContext(CartContext);
 
   useEffect(() => {
     getProducts();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Item list comtainer
   const { category } = useParams();
 
   const filterCategory = products.filter((product) => product.category == category);
-  console.log(filterCategory);
+  // console.log(filterCategory);
 
   return (
     <>
